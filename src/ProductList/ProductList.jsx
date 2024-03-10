@@ -128,7 +128,7 @@ const ProductList = () => {
 
         fetchProducts();
         fetchTotalPages();
-    }, [currentPage, filter]);
+    }, [currentPage, filter, fetchProducts]);
 
     return (
         <div>

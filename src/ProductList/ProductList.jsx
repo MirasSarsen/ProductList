@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import md5 from 'md5';
 import CryptoJS from 'crypto-js';
 
-const API_URL = 'http://api.valantis.store:40000/';
+const API_URL = 'https://api.valantis.store:41000/';
 const PASSWORD = 'Valantis';
 const timestamp = new Date().toISOString().slice(0, 10).split('-').join('');
 const data = `${PASSWORD}_${timestamp}`;
@@ -11,7 +11,7 @@ const authorizationString = CryptoJS.MD5(data).toString();
 
 export const getStore = async () => {
     try {
-        const response = await fetch("http://api.valantis.store:40000/", {
+        const response = await fetch("https://api.valantis.store:41000/", {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'X-Auth': authorizationString },
             body: JSON.stringify({ action: 'get_ids' }),
